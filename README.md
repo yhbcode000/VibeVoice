@@ -39,7 +39,7 @@ The model can synthesize speech up to **90 minutes** long with up to **4 distinc
 
 ## Roadmap
 
-- [ ] Unofficial/community training code
+- [x] Unofficial/community training code
 - [ ] HF Transformers integration ([PR](https://github.com/huggingface/transformers/pull/40546))
 - [ ] VibePod: End-to-end solution that creates podcasts from documents, webpages, or even a simple topic.
 
