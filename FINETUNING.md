@@ -8,7 +8,7 @@ Join the [Discord](https://discord.gg/ZDEYTTRxWG) for support. Also take a look 
 
 ## Notes
 
-* Members of the community have observed that for fine-tuning VibeVoice on a SINGLE voice, it is often beneficial to set `voice_prompt_drop_rate` to `1.0` and avoid use of voice cloning/reference audio all together during inference. This can lead to more natural speech generation. **If you are training on a single speaker I highly recommend you try this. NOTE: This will REMOVE voice cloning capabilities. Your fine-tuned model will NOT support voice-cloning**
+* Members of the community have observed that for fine-tuning VibeVoice on a SINGLE voice, it is often beneficial to set `voice_prompt_drop_rate` to `1.0` and avoid use of voice cloning/reference audio all together during inference. This can lead to more natural speech generation. **If you are training on a single speaker I highly recommend you try this, just a note that if you do this voice cloning will not be supported on your finetuned model**
 
 ## Example Script
 
