@@ -5,7 +5,7 @@
 
 More instructions coming soon.
 
-Join the [Discord](https://discord.gg/ZDEYTTRxWG) for support.
+Join the [Discord](https://discord.gg/ZDEYTTRxWG) for support. Also take a look at [voicepowered-ai/VibeVoice-finetuning](https://github.com/voicepowered-ai/VibeVoice-finetuning).
 
 Example script:
 
