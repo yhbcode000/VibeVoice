@@ -1,11 +1,16 @@
 # Finetuning
 
-> [!IMPORTANT]
-> Finetuning is still **very experimental** and not well tested yet!
-
 More instructions coming soon.
 
+VibeVoice finetuning works wonders - both for adaptipng VibeVoice to new languages and for better voice cloning of a single voice.
+
 Join the [Discord](https://discord.gg/ZDEYTTRxWG) for support. Also take a look at [voicepowered-ai/VibeVoice-finetuning](https://github.com/voicepowered-ai/VibeVoice-finetuning).
+
+## Notes
+
+* Members of the community have observed that for fine-tuning VibeVoice on a single voice, it is often beneficial to set `voice_prompt_drop_rate` to `1.0` and avoid use of voice cloning/reference audio all together during inference. This can lead to more natural speech generation. **If you are training on a single speaker I highly recommend you try this.**
+
+## Example Script
 
 Example script:
 
