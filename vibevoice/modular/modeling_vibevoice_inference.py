@@ -300,7 +300,7 @@ class VibeVoiceForConditionalGenerationInference(VibeVoicePreTrainedModel, Gener
         )
 
         max_cache_length = generation_config.max_length - 1
-        self._prepare_cache_for_generation(generation_config, model_kwargs, None, batch_size, max_cache_length, device)
+        self._prepare_cache_for_generation(generation_config, model_kwargs, None, batch_size, max_cache_length)
         model_kwargs['cache_position'] = torch.arange(input_ids_length, device=device, dtype=torch.long)
         for k, v in model_kwargs.items():
             if isinstance(v, torch.Tensor):
@@ -466,11 +466,12 @@ class VibeVoiceForConditionalGenerationInference(VibeVoicePreTrainedModel, Gener
             model_inputs = self.prepare_inputs_for_generation(input_ids, **model_kwargs)
             if is_prefill:
                 # we process the speech inputs only during the first generation step
-                prefill_inputs = {
-                    "speech_tensors": speech_tensors.to(device=device),
-                    "speech_masks": speech_masks.to(device),
-                    "speech_input_mask": speech_input_mask.to(device),
-                }
+                prefill_inputs = {}
+                if speech_tensors is not None and speech_masks is not None:
+                    prefill_inputs["speech_tensors"] = speech_tensors.to(device=device)
+                    prefill_inputs["speech_masks"] = speech_masks.to(device)
+                if speech_input_mask is not None:
+                    prefill_inputs["speech_input_mask"] = speech_input_mask.to(device)
                 is_prefill = False
             else:
                 _ = model_inputs.pop('inputs_embeds', None)

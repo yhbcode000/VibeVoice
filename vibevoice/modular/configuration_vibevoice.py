@@ -237,6 +237,11 @@ class VibeVoiceConfig(PretrainedConfig):
         # other parameters
         self.acoustic_vae_dim = getattr(self.acoustic_tokenizer_config, 'vae_dim', 64)
         self.semantic_vae_dim = getattr(self.semantic_tokenizer_config, 'vae_dim', 128)
+        # Mirror key decoder attributes for HF generation utilities.
+        self.num_hidden_layers = getattr(self.decoder_config, "num_hidden_layers", None)
+        self.hidden_size = getattr(self.decoder_config, "hidden_size", None)
+        self.num_attention_heads = getattr(self.decoder_config, "num_attention_heads", None)
+        self.vocab_size = getattr(self.decoder_config, "vocab_size", None)
 
         super().__init__(**kwargs)
 
